@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -117,6 +117,35 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
+    );
+  }
+}*/
+
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'screens/quiz_screen.dart';
+
+void main() {
+  runApp(const ProviderScope(child: QuizLiteApp()));
+}
+
+class QuizLiteApp extends StatelessWidget {
+  const QuizLiteApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'QuizLite',
+      debugShowCheckedModeBanner: false, 
+      theme: ThemeData(
+        scaffoldBackgroundColor: const Color(0xFF7B43F1), 
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF7B43F1)),
+        useMaterial3: true,
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(color: Colors.white),
+        ),
+      ),
+      home: const QuizScreen(),
     );
   }
 }
